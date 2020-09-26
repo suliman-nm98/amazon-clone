@@ -7,7 +7,7 @@ function Home() {
       <div className="home__container">
         <img
           className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/39/Gateway/Events/2020/Hero/XCM_Manual_1500x600_1221905_04292020_BAU_GW_TH_NTACoupon_v2_En_e6b710f3_ea80_4def_97d1_a98b0242727f_jpg_LOWER_QL85_._CB433899948_.jpg"
+          src="https://images-eu.ssl-images-amazon.com/images/G/39/Prime/HNTRS1.1500x600._CB420674233_.jpg"
           alt="img"
         />
 
@@ -47,8 +47,7 @@ function Home() {
         </div>
         <div className="home__row">
           <Product
-            title="
-Polar Grit X - Rugged Outdoor Watch with GPS, Compass, Altimeter and Military-Level Durability for Hiking, Trail Running, Mountain Biking and other Sports"
+            title="Polar Grit X - Rugged Outdoor Watch with GPS, Compass, Altimeter and Military-Level Durability for Hiking, Trail Running, Mountain Biking and other Sports"
             price={1799.01}
             image="https://images-na.ssl-images-amazon.com/images/I/51AFIoMCABL._AC_SL1100_.jpg"
             rating={2}
