@@ -26,6 +26,7 @@ function Product({ id, title, image, price, rating }) {
           <strong>{price}</strong>
         </p>
         <div className="product__rating">
+          {/* //produce stars based on the rating number */}
           {Array(rating)
             .fill()
             .map((_, i) => (
