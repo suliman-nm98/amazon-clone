@@ -13,12 +13,14 @@ function Home() {
 
         <div className="home__row">
           <Product
+            id="1"
             title="the lean startup"
             price={22.2}
             image="https://images-na.ssl-images-amazon.com/images/I/7131m3g3D9L._AC_SL1500_.jpg"
             rating={5}
           />
           <Product
+            id="2"
             title="adidas Mens Essentials Linear T-shirt T-SHIRTS"
             price={59.01}
             image="https://images-na.ssl-images-amazon.com/images/I/71kbn7dLCML._AC_SX342_.jpg"
@@ -27,18 +29,21 @@ function Home() {
         </div>
         <div className="home__row">
           <Product
+            id="3"
             title="Sony PlayStation 4 Slim 500GB Console (Black) - International Version"
             price={1001.01}
             image="https://images-na.ssl-images-amazon.com/images/I/41Bvqi0k5jL._AC_SY400_.jpg"
             rating={5}
           />
           <Product
+            id="4"
             title="SkyLand EM-9229-20 Unisex Adult Cast Iron Adjustable Dumbbell Set With Connector - Black, 44.50 L x 25 W x 14.50 cm H"
             price={599.01}
             image="https://images-na.ssl-images-amazon.com/images/I/81k%2BXKqP7lL._AC_SL1500_.jpg"
             rating={5}
           />
           <Product
+            id="5"
             title="Sabrent USB 3.0 to SSD / 2.5-Inch SATA I/II/IIIHard Drive Adapter (EC-SSHD)"
             price={29.01}
             image="https://images-na.ssl-images-amazon.com/images/I/71xhus0OFrL._AC_SL1500_.jpg"
@@ -47,6 +52,7 @@ function Home() {
         </div>
         <div className="home__row">
           <Product
+            id="6"
             title="Polar Grit X - Rugged Outdoor Watch with GPS, Compass, Altimeter and Military-Level Durability for Hiking, Trail Running, Mountain Biking and other Sports"
             price={1799.01}
             image="https://images-na.ssl-images-amazon.com/images/I/51AFIoMCABL._AC_SL1100_.jpg"
