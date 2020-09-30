@@ -23,6 +23,7 @@ function Payment() {
         method: "post",
         //stripe epects the total in a currencies subunits
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+        headers: { "Access-Control-Allow-Origin": "*" },
       });
       setClientSecret(response.data.clientSecret);
     };
@@ -30,6 +31,7 @@ function Payment() {
     return () => {};
   }, [basket]);
 
+  console.log("The secret is >>>", clientSecret);
   //stripe hooks
   const stripe = useStripe();
   const elements = useElements();
@@ -40,7 +42,7 @@ function Payment() {
     setProcessing(true);
 
     const payload = await stripe
-      .confrimCardPayment(clientSecret, {
+      .confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
         },
@@ -89,7 +91,7 @@ function Payment() {
                 id={item.id}
                 image={item.image}
                 title={item.title}
-                price={item.image}
+                price={item.price}
                 rating={item.rating}
               />
             ))}
