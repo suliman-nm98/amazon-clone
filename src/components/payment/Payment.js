@@ -7,6 +7,7 @@ import axios from "../axios/axios";
 import { getBasketTotal } from "../../reducer";
 import CurrencyFormat from "react-currency-format";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { db } from "../../firebase";
 function Payment() {
   const [{ user, basket }, dispatch] = useStateValue();
   const history = useHistory();
@@ -18,6 +19,7 @@ function Payment() {
 
   useEffect(() => {
     //   egenerate stripe secret to charge a customer
+    console.log(user);
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
@@ -31,7 +33,6 @@ function Payment() {
     return () => {};
   }, [basket]);
 
-  console.log("The secret is >>>", clientSecret);
   //stripe hooks
   const stripe = useStripe();
   const elements = useElements();
@@ -47,11 +48,27 @@ function Payment() {
           card: elements.getElement(CardElement),
         },
       })
-      .then(({ payementIntent }) => {
+      .then(({ paymentIntent }) => {
         //paymentIntent = stripe payment confirmation
+
+        //add orders to database
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        // Empty basket after payment has been processed
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
         history.replace("/orders");
       });
   };
@@ -62,6 +79,7 @@ function Payment() {
     setError(event.error ? event.error.message : "");
     //   2. display errors as user types card details
   };
+
   return (
     <div className="payment">
       <div className="payment__container">
