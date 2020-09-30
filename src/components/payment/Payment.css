@@ -29,5 +29,20 @@
   flex: 0.8;
 }
 
-.payment__priceContainer {
+.payment__details > form {
+  max-width: 400px;
+}
+.payment__details > form > div > button {
+  background: #f0c14b;
+  border-radius: 2px;
+  width: 300px;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  font-weight: bolder;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+}
+.payment__details h3 {
+  padding-bottom: 20px;
 }
