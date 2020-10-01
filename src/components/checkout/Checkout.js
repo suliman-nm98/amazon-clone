@@ -6,7 +6,7 @@ import { useStateValue } from "../../services/StateProvider";
 import FlipMove from "react-flip-move";
 
 function Checkout() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout">
